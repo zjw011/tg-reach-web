@@ -2062,3 +2062,24 @@ img {
     background: rgba(0, 136, 204, 0.3);
     color: var(--text-primary);
 }
+
+/* ========================================
+   下载按钮加载动画
+   ======================================== */
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

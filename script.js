@@ -130,17 +130,77 @@ function initAOS() {
 
 /**
  * 下载按钮功能
- * 点击显示"暂未发布"提示
+ * 从API获取最新安装包信息并触发下载
  */
 function initDownloadButton() {
     const downloadBtn = document.getElementById('downloadBtn');
     const toast = document.getElementById('toast');
     let toastTimeout;
+    let isDownloading = false;
 
     if (downloadBtn && toast) {
-        downloadBtn.addEventListener('click', function(e) {
+        downloadBtn.addEventListener('click', async function(e) {
             e.preventDefault();
-            showToast('正在努力上线中，敬请等待');
+            
+            if (isDownloading) return;
+            
+            isDownloading = true;
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = `
+                <svg class="btn-icon spin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" fill="currentColor"/>
+                </svg>
+                获取下载链接...
+            `;
+            downloadBtn.disabled = true;
+
+            try {
+                let downloadUrl = null;
+                let errorMsg = '';
+                
+                try {
+                    const response = await fetch('http://115.159.117.241:9960/api/installer/latest', {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log('API返回数据:', data);
+                        if (data.download_url) {
+                            downloadUrl = data.download_url;
+                        } else {
+                            errorMsg = 'API返回数据中没有download_url';
+                        }
+                    } else {
+                        errorMsg = `API请求失败: ${response.status}`;
+                    }
+                } catch (fetchError) {
+                    console.error('Fetch错误:', fetchError);
+                    errorMsg = `网络错误: ${fetchError.message}`;
+                }
+                
+                if (downloadUrl) {
+                    // 获取到下载链接，直接跳转下载
+                    console.log('开始下载:', downloadUrl);
+                    window.location.href = downloadUrl;
+                    showToast('下载已开始，请稍候...');
+                } else {
+                    // 无法获取下载链接
+                    console.error('获取下载链接失败:', errorMsg);
+                    showToast('获取下载链接失败: ' + errorMsg + '，请检查控制台');
+                }
+
+            } catch (error) {
+                console.error('下载失败:', error);
+                showToast('下载失败: ' + error.message);
+            } finally {
+                isDownloading = false;
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+            }
         });
     }
 
