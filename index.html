@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG Reach - Telegram智能助手工具</title>
+    <meta name="description" content="TG Reach - 专业的Telegram电脑端智能助手，支持自动回复、机器人管理、群消息监控等功能">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="logo-text">TG Reach</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#features" class="nav-link">功能介绍</a></li>
+                <li><a href="#roadmap" class="nav-link">未来规划</a></li>
+                <li><a href="#download" class="nav-link">下载</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="切换导航">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Windows 桌面应用</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Telegram</span>
+                    <span class="title-line highlight">智能助手</span>
+                </h1>
+                <p class="hero-subtitle">
+                    专业的电脑端 Telegram 自动化工具，支持智能回复、机器人管理、群消息监控，让您的社交营销更高效
+                </p>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
+                        </svg>
+                        立即下载
+                    </a>
+                    <a href="#features" class="btn btn-secondary">了解更多</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">核心功能</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">自动运行</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">安全可靠</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="app-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="chat-item">
+                            <div class="chat-avatar"></div>
+                            <div class="chat-info">
+                                <div class="chat-name">自动回复机器人</div>
+                                <div class="chat-preview">已设置自动回复规则: 3条</div>
+                            </div>
+                            <div class="chat-status active"></div>
+                        </div>
+                        <div class="chat-item">
+                            <div class="chat-avatar"></div>
+                            <div class="chat-info">
+                                <div class="chat-name">营销群组监控</div>
+                                <div class="chat-preview">关键词匹配: 5个群组</div>
+                            </div>
+                            <div class="chat-status"></div>
+                        </div>
+                        <div class="chat-item">
+                            <div class="chat-avatar"></div>
+                            <div class="chat-info">
+                                <div class="chat-name">多媒体自动回复</div>
+                                <div class="chat-preview">支持: 视频、图片、语音</div>
+                            </div>
+                            <div class="chat-status active"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-security">
+                    <div class="security-badge">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/>
+                        </svg>
+                        <span>本地运行，数据不上云</span>
+                    </div>
+                    <div class="security-badge">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
+                        </svg>
+                        <span>账号信息本地存储</span>
+                    </div>
+                    <div class="security-badge">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>隐私完全掌控</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>向下滚动</span>
+        </div>
+    </section>
+
+    <!-- 倒计时区域 -->
+    <section class="countdown-section" id="countdown">
+        <div class="container">
+            <div class="countdown-wrapper">
+                <span class="countdown-tag">即将上线</span>
+                <h2 class="countdown-title">产品发布倒计时</h2>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">07</span>
+                        <span class="countdown-label">天</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">小时</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">分钟</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">秒</span>
+                    </div>
+                </div>
+                <p class="countdown-desc">敬请期待，我们即将为您带来全新的 Telegram 智能助手体验</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性区域 -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">核心功能</span>
+                <h2 class="section-title">强大的自动化工具</h2>
+                <p class="section-desc">专为 Telegram 用户设计的一站式解决方案，提升您的沟通效率</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- 功能卡片 1 -->
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">账号登录管理</h3>
+                    <p class="feature-desc">支持 Telegram 个人账号安全登录，采用官方 API，确保账号安全与稳定性</p>
+                </div>
+
+                <!-- 功能卡片 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">自定义自动回复</h3>
+                    <p class="feature-desc">灵活设置自动回复内容，支持文本模板，让沟通更加智能高效</p>
+                </div>
+
+                <!-- 功能卡片 3 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">多媒体自动回复</h3>
+                    <p class="feature-desc">支持视频、图片、语音等多种媒体格式的自动回复，丰富您的互动方式</p>
+                </div>
+
+                <!-- 功能卡片 4 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">回复间隔设置</h3>
+                    <p class="feature-desc">自定义回复间隔时间，模拟真实用户行为，避免被系统识别为机器人</p>
+                </div>
+
+                <!-- 功能卡片 5 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">机器人管理系统</h3>
+                    <p class="feature-desc">轻松添加和管理 BotFather 创建的机器人，扩展您的自动化能力</p>
+                </div>
+
+                <!-- 功能卡片 6 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">群消息监控</h3>
+                    <p class="feature-desc">自动监控群组消息，识别关键词并自动回复，把握每一个商机</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安全特性区域 -->
+    <section class="security-section" id="security">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">安全保障</span>
+                <h2 class="section-title">您的数据，完全由您掌控</h2>
+                <p class="section-desc">采用本地运行架构，确保您的隐私和数据安全</p>
+            </div>
+            <div class="security-grid">
+                <div class="security-card" data-aos="fade-up">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="security-card-title">本地运行模式</h3>
+                    <p class="security-card-desc">所有程序功能在您的设备本地运行，无需连接外部服务器，杜绝数据外泄风险</p>
+                </div>
+                <div class="security-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="security-card-title">本地数据库存储</h3>
+                    <p class="security-card-desc">您的 Telegram 账号信息、配置设置均保存在本地数据库中，不会上传至任何云端服务器</p>
+                </div>
+                <div class="security-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="security-card-title">媒体文件本地存储</h3>
+                    <p class="security-card-desc">所有视频、图片、语音等媒体资源文件均存储在您的本地文件夹中，确保内容的私密性和安全性</p>
+                </div>
+                <div class="security-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="security-card-title">隐私完全掌控</h3>
+                    <p class="security-card-desc">您可以随时查看、修改或删除所有本地存储的数据，对自己的信息拥有完全的控制权</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能展示区域 -->
+    <section class="showcase">
+        <div class="container">
+            <div class="showcase-item">
+                <div class="showcase-content">
+                    <span class="showcase-tag">智能回复</span>
+                    <h3 class="showcase-title">自动化消息处理</h3>
+                    <p class="showcase-desc">设置自定义回复规则，当收到特定关键词消息时，系统会自动发送预设回复。支持多种媒体类型，让您的回复更加生动有效。</p>
+                    <ul class="showcase-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                            关键词触发自动回复
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                            支持文本、图片、视频、语音
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                            自定义回复间隔时间
+                        </li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <div class="showcase-card">
+                        <div class="message-bubble incoming">
+                            <span class="message-text">您好，请问产品价格是多少？</span>
+                            <span class="message-time">10:30</span>
+                        </div>
+                        <div class="message-bubble outgoing">
+                            <span class="message-text">感谢您的咨询！我们的产品价格表已发送给您，请查收。</span>
+                            <span class="message-time">10:30</span>
+                        </div>
+                        <div class="auto-reply-badge">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+                            自动回复
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-item reverse">
+                <div class="showcase-content">
+                    <span class="showcase-tag">群组监控</span>
+                    <h3 class="showcase-title">群消息智能监控</h3>
+                    <p class="showcase-desc">实时监控多个群组的消息动态，当检测到预设关键词时，立即执行相应操作。不错过任何重要信息，让您的营销更加精准。</p>
+                    <ul class="showcase-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                            多群组同时监控
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                            关键词智能识别
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                            自动执行预设操作
+                        </li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <div class="showcase-card dark">
+                        <div class="group-list">
+                            <div class="group-item">
+                                <div class="group-icon">G1</div>
+                                <div class="group-info">
+                                    <div class="group-name">产品推广群 A</div>
+                                    <div class="group-status">监控中 • 3个关键词</div>
+                                </div>
+                                <div class="group-indicator active"></div>
+                            </div>
+                            <div class="group-item">
+                                <div class="group-icon">G2</div>
+                                <div class="group-info">
+                                    <div class="group-name">客户服务群 B</div>
+                                    <div class="group-status">监控中 • 5个关键词</div>
+                                </div>
+                                <div class="group-indicator active"></div>
+                            </div>
+                            <div class="group-item">
+                                <div class="group-icon">G3</div>
+                                <div class="group-info">
+                                    <div class="group-name">市场调研群 C</div>
+                                    <div class="group-status">已暂停</div>
+                                </div>
+                                <div class="group-indicator"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 未来功能路线图 -->
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">未来规划</span>
+                <h2 class="section-title">产品路线图</h2>
+                <p class="section-desc">持续迭代，为您带来更多强大功能</p>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="roadmap-item" data-aos="fade-right">
+                    <div class="roadmap-marker completed">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                    </div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-phase">第一阶段</span>
+                        <h3 class="roadmap-title">核心功能发布</h3>
+                        <p class="roadmap-desc">账号登录、自动回复、多媒体支持、机器人管理等基础功能</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-aos="fade-left">
+                    <div class="roadmap-marker current">
+                        <span class="marker-pulse"></span>
+                    </div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-phase">第二阶段</span>
+                        <h3 class="roadmap-title">知识库集成</h3>
+                        <p class="roadmap-desc">支持导入知识库文档，基于内容智能匹配回复，提升回复准确性</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-aos="fade-right">
+                    <div class="roadmap-marker upcoming"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-phase">第三阶段</span>
+                        <h3 class="roadmap-title">AI 智能助手</h3>
+                        <p class="roadmap-desc">集成 AI 大模型，实现自然语言理解和生成，提供更智能的交互体验</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-aos="fade-left">
+                    <div class="roadmap-marker upcoming"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-phase">第四阶段</span>
+                        <h3 class="roadmap-title">数据分析面板</h3>
+                        <p class="roadmap-desc">消息统计、回复效果分析、用户行为洞察等数据可视化功能</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-card">
+                <div class="download-content">
+                    <span class="download-tag">Windows 版本</span>
+                    <h2 class="download-title">立即开始使用</h2>
+                    <p class="download-desc">下载 TG Reach，开启您的 Telegram 自动化之旅</p>
+                    
+                    <div class="download-info">
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="currentColor"/></svg>
+                            <span>支持 Windows 10/11</span>
+                        </div>
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
+                            <span>无需安装，解压即用</span>
+                        </div>
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/></svg>
+                            <span>安全可靠，本地运行</span>
+                        </div>
+                    </div>
+                    
+                    <div class="download-security">
+                        <h4 class="security-title">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+                            隐私安全保障
+                        </h4>
+                        <ul class="security-list">
+                            <li>所有数据存储在本地设备，不上传云端</li>
+                            <li>账号信息保存在本地数据库</li>
+                            <li>媒体文件仅存储在您的本地文件夹</li>
+                            <li>完全掌控自己的数据，可随时删除</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-download" id="downloadBtn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
+                        </svg>
+                        下载 TG Reach
+                        <span class="version-tag">v1.0.0</span>
+                    </button>
+                    
+                    <p class="download-note">文件大小：约 50MB</p>
+                </div>
+                <div class="download-visual">
+                    <div class="download-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">TG Reach</span>
+                    </a>
+                    <p class="footer-desc">专业的 Telegram 智能助手工具，让沟通更高效</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>产品</h4>
+                        <ul>
+                            <li><a href="#features">功能介绍</a></li>
+                            <li><a href="#roadmap">未来规划</a></li>
+                            <li><a href="#download">下载</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>支持</h4>
+                        <ul>
+                            <li><a href="#">使用文档</a></li>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TG Reach. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast 提示 -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+            </svg>
+            <span class="toast-message">暂未发布，敬请期待！</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
