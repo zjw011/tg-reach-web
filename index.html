@@ -5,11 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TG Reach - TG智能助手工具</title>
     <meta name="description" content="TG Reach - 专业的TG电脑端智能助手，支持自动回复、机器人管理、群消息监控等功能">
+    <meta name="keywords" content="TG Reach,TG智能助手,TG自动回复,Telegram自动化工具,群消息监控,机器人管理,Windows桌面应用">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="theme-color" content="#0088cc">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:title" content="TG Reach - TG智能助手工具">
+    <meta property="og:description" content="专业的 TG 电脑端智能助手，支持自动回复、机器人管理、群消息监控。">
+    <meta property="og:image" content="logo.ico">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TG Reach - TG智能助手工具">
+    <meta name="twitter:description" content="本地运行、安全可靠的 TG 自动化助手。">
+    <meta name="twitter:image" content="logo.ico">
     <link rel="icon" type="image/x-icon" href="logo.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "TG Reach",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Windows 10, Windows 11",
+          "description": "TG Reach 是一款本地运行的 TG 智能助手工具，支持自动回复、机器人管理、群消息监控和多媒体自动化触达。",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+          },
+          "featureList": [
+            "账号登录管理",
+            "自定义自动回复",
+            "多媒体自动回复",
+            "机器人管理系统",
+            "群消息监控"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "TG Reach",
+          "description": "专注于 TG 自动化触达与消息处理效率工具。"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "TG Reach 是什么？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "TG Reach 是一款运行在 Windows 的 TG 智能助手工具，用于自动回复、群消息监控、机器人管理和消息触达效率提升。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "数据是否上传到云端？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "不会。TG Reach 采用本地运行模式，账号信息、配置和媒体资源默认在本地存储。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "支持哪些系统？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "当前主要支持 Windows 10 和 Windows 11。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -23,14 +95,6 @@
                 </div>
                 <span class="logo-text">TG Reach</span>
             </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#features" class="nav-link">功能介绍</a></li>
-                <li><a href="#roadmap" class="nav-link">未来规划</a></li>
-                <li><a href="#download" class="nav-link">下载</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="切换导航">
-                <span class="hamburger"></span>
-            </button>
         </div>
     </nav>
 
@@ -48,11 +112,12 @@
                     <span>Windows 桌面应用</span>
                 </div>
                 <h1 class="hero-title">
-                    <span class="title-line">TG -消息触达 </span>
-                    <span class="title-line highlight">智能助手</span>
+                    <span class="title-line">消息触达助手</span>
+                    <span class="title-line highlight">让转化更稳</span>
                 </h1>
                 <p class="hero-subtitle">
-                    专业的电脑端 TG 自动化工具，支持智能回复、机器人管理、群消息监控，让您的社交营销更高效
+                    面向社群运营、客服与营销团队。多账号统一管理、自动回复与关键词跟进，
+                    用更少人力完成更高频的消息触达与线索转化。
                 </p>
                 <div class="hero-cta">
                     <a href="#download" class="btn btn-primary">
@@ -79,6 +144,26 @@
                 </div>
             </div>
             <div class="hero-visual">
+                <div class="hero-security">
+                    <div class="security-badge">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/>
+                        </svg>
+                        <span>本地运行，数据不上云</span>
+                    </div>
+                    <div class="security-badge">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
+                        </svg>
+                        <span>账号信息本地存储</span>
+                    </div>
+                    <div class="security-badge">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                        <span>隐私完全掌控</span>
+                    </div>
+                </div>
                 <div class="app-mockup">
                     <div class="mockup-header">
                         <div class="mockup-dots">
@@ -114,26 +199,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-security">
-                    <div class="security-badge">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/>
-                        </svg>
-                        <span>本地运行，数据不上云</span>
-                    </div>
-                    <div class="security-badge">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
-                        </svg>
-                        <span>账号信息本地存储</span>
-                    </div>
-                    <div class="security-badge">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-                        </svg>
-                        <span>隐私完全掌控</span>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -144,34 +209,22 @@
         </div>
     </section>
 
-    <!-- 倒计时区域 -->
-    <section class="countdown-section" id="countdown">
+    <!-- GEO 语义概览 -->
+    <section class="geo-overview" id="overview">
         <div class="container">
-            <div class="countdown-wrapper">
-                <span class="countdown-tag">即将上线</span>
-                <h2 class="countdown-title">产品发布倒计时</h2>
-                <div class="countdown-timer" id="countdownTimer">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">07</span>
-                        <span class="countdown-label">天</span>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-label">小时</span>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-label">分钟</span>
-                    </div>
-                    <div class="countdown-separator">:</div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">秒</span>
-                    </div>
+            <div class="geo-overview-card">
+                <h2 class="geo-title">TG Reach 是什么？</h2>
+                <p class="geo-intro">
+                    TG Reach 是一款面向 Windows 的 TG 消息触达自动化工具。它聚焦于自动回复、群消息监控与机器人管理，
+                    通过本地运行架构帮助团队提升触达效率，同时保障数据隐私与可控性。
+                </p>
+                <div class="geo-tags">
+                    <span class="geo-tag">TG 自动回复软件</span>
+                    <span class="geo-tag">Telegram 触达工具</span>
+                    <span class="geo-tag">Windows 桌面应用</span>
+                    <span class="geo-tag">本地运行</span>
+                    <span class="geo-tag">隐私安全</span>
                 </div>
-                <p class="countdown-desc">敬请期待，我们即将为您带来全新的 TG 智能助手体验</p>
             </div>
         </div>
     </section>
@@ -399,6 +452,52 @@
         </div>
     </section>
 
+    <!-- 套餐价格 -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">套餐价格</span>
+                <h2 class="section-title">按需选择适合您的版本</h2>
+                <p class="section-desc">所有套餐均支持本地运行，按账号额度灵活扩展</p>
+            </div>
+
+            <div class="pricing-grid">
+                <article class="pricing-card" data-aos="fade-up">
+                    <span class="pricing-badge">新手首选</span>
+                    <p class="pricing-plan">试用套餐</p>
+                    <p class="pricing-price">1.9 <span>USDT</span></p>
+                    <p class="pricing-cycle">3 天</p>
+                    <ul class="pricing-list">
+                        <li>可绑定账号额度：3</li>
+                        <li>适合首次体验产品能力</li>
+                    </ul>
+                </article>
+
+                <article class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <span class="pricing-badge pricing-badge-hot">推荐</span>
+                    <p class="pricing-plan">基础套餐</p>
+                    <p class="pricing-price">18 <span>USDT</span></p>
+                    <p class="pricing-cycle">每月</p>
+                    <ul class="pricing-list">
+                        <li>可绑定账号额度：5</li>
+                        <li>适合稳定运营与日常触达</li>
+                    </ul>
+                </article>
+
+                <article class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="pricing-badge">高配版</span>
+                    <p class="pricing-plan">进阶套餐</p>
+                    <p class="pricing-price">30 <span>USDT</span></p>
+                    <p class="pricing-cycle">每月</p>
+                    <ul class="pricing-list">
+                        <li>可绑定账号额度：15</li>
+                        <li>适合多账号规模化场景</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- 未来功能路线图 -->
     <section class="roadmap" id="roadmap">
         <div class="container">
@@ -450,6 +549,47 @@
                         <p class="roadmap-desc">消息统计、回复效果分析、用户行为洞察等数据可视化功能</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-desc">帮助用户和 AI 搜索更快理解产品能力与边界</p>
+            </div>
+            <div class="faq-grid">
+                <article class="faq-item">
+                    <div class="faq-head">
+                        <span class="faq-pill">Q1</span>
+                        <h3>TG Reach 可以做什么？</h3>
+                    </div>
+                    <p>可用于自动回复、机器人管理、群组消息监控、关键词触发和多媒体回复，提升消息触达效率。</p>
+                </article>
+                <article class="faq-item">
+                    <div class="faq-head">
+                        <span class="faq-pill">Q2</span>
+                        <h3>数据是否会上传？</h3>
+                    </div>
+                    <p>默认不上传。账号配置和媒体资源均在本地存储，用户可自行管理与删除数据。</p>
+                </article>
+                <article class="faq-item">
+                    <div class="faq-head">
+                        <span class="faq-pill">Q3</span>
+                        <h3>适合哪些场景？</h3>
+                    </div>
+                    <p>适合社群运营、客户咨询响应、关键词线索跟进和日常自动化消息处理场景。</p>
+                </article>
+                <article class="faq-item">
+                    <div class="faq-head">
+                        <span class="faq-pill">Q4</span>
+                        <h3>是否支持 Windows？</h3>
+                    </div>
+                    <p>支持 Windows 10/11，桌面环境下可直接使用，部署成本低，上手快。</p>
+                </article>
             </div>
         </div>
     </section>
@@ -541,7 +681,7 @@
                         <ul>
                             <li><a href="#">使用文档</a></li>
                             <li><a href="#">常见问题</a></li>
-                            <li><a href="#">联系我们</a></li>
+                            <li><a href="https://t.me/TG_Reach_a" target="_blank" rel="noopener noreferrer">联系我们</a></li>
                         </ul>
                     </div>
                 </div>
@@ -565,6 +705,36 @@
             <span class="toast-message">暂未发布，敬请期待！</span>
         </div>
     </div>
+
+    <!-- TG 交流群悬浮入口 -->
+    <nav class="floating-side-nav" aria-label="页面快捷导航">
+        <a href="#hero" class="side-nav-brand" aria-label="返回顶部">
+            <span class="side-nav-brand-icon">
+                <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M512 106.666667c60.010667 0 116.970667 13.034667 168.213333 36.437333L615.893333 204.181333a63.232 63.232 0 0 0-15.36 64.490667l9.685334 30.144A233.792 233.792 0 0 0 512 277.333333c-129.6 0-234.666667 105.066667-234.666667 234.666667s105.066667 234.666667 234.666667 234.666667 234.666667-105.066667 234.666667-234.666667c0-28.8-5.184-56.405333-14.698667-81.92l54.528 15.466667c22.72 7.594667 44.053333-9.28 60.992-26.24l45.226667-46.784A404.544 404.544 0 0 1 917.333333 512c0 223.850667-181.482667 405.333333-405.333333 405.333333S106.666667 735.850667 106.666667 512 288.149333 106.666667 512 106.666667z m0 234.666666c27.306667 0 53.098667 6.4 75.989333 17.813334l-104.597333 109.781333c-18.517333 18.517333-12.714667 60.650667 10.709333 82.88 23.424 22.208 73.685333 19.072 92.202667 0.554667l89.770667-87.509334A170.666667 170.666667 0 1 1 512 341.333333zM800.554667 112.746667a20.757333 20.757333 0 0 1 5.013333 8.128l29.653333 89.28 89.216 29.610666a20.757333 20.757333 0 0 1 8.149334 34.346667l-120 120.021333a41.493333 41.493333 0 0 1-42.496 10.026667l-63.616-21.290667-141.354667 141.354667a31.125333 31.125333 0 1 1-44.010667-44.010667l141.056-141.056-21.12-64a41.493333 41.493333 0 0 1 10.090667-42.325333l120.085333-120.106667a20.757333 20.757333 0 0 1 29.333334 0z" fill="currentColor"></path>
+                </svg>
+            </span>
+            <span class="side-nav-brand-text">TG Reach</span>
+        </a>
+        <a href="#features">功能介绍</a>
+        <a href="#pricing">套餐价格 <span class="menu-hot" aria-label="爆火">HOT</span></a>
+        <a href="#roadmap">未来规划</a>
+        <a href="#faq">常见问题</a>
+        <a href="#download">工具下载</a>
+        <a
+            class="side-nav-cta"
+            href="https://t.me/TG_Reach_a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="加入 TG Reach 工具反馈群"
+            title="加入 TG Reach 工具反馈群"
+        >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21.5 4.5L18.4 19.3c-.2.9-.8 1.1-1.6.7l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.3-7.5c.4-.4-.1-.6-.6-.2L7 13.5l-4.4-1.4c-1-.3-1-1 .2-1.5L20 3.8c.8-.3 1.6.2 1.5.7z" fill="currentColor"/>
+            </svg>
+            <span>交流群</span>
+        </a>
+    </nav>
 
     <script src="script.js?v=4"></script>
 </body>

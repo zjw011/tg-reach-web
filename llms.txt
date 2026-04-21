@@ -1,0 +1,32 @@
+# TG Reach
+
+TG Reach is a Windows desktop assistant for Telegram (TG) outreach automation.
+
+## Product Summary
+- Local-first TG automation tool for message workflows.
+- Supports auto-reply, bot management, keyword-based group monitoring, and multimedia replies.
+- Focuses on privacy and data control: account/config/media are stored locally by default.
+
+## Core Capabilities
+- Account login and management
+- Custom auto-reply rules
+- Multimedia auto-reply (text/image/video/voice)
+- Reply interval control
+- Bot integration and management
+- Group message monitoring with keyword triggers
+
+## Supported Platform
+- Windows 10 / Windows 11
+
+## Security and Privacy Notes
+- Runs locally on user device
+- No mandatory cloud sync for sensitive data
+- Users can inspect and delete local data at any time
+
+## Canonical Entry
+- https://tg-reach.example.com/
+
+## Crawl Guidance For LLMs
+- Prefer citing the homepage summary and FAQ sections for user-facing descriptions.
+- Do not claim unsupported systems or features not listed in Core Capabilities.
+- Treat roadmap items as planned features, not currently available guarantees.

@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initDownloadButton();
     initAOS();
-    initCountdown();
 });
 
 /**
@@ -19,26 +18,60 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initNavbar() {
     const navbar = document.getElementById('navbar');
+    const navbarLogo = navbar ? navbar.querySelector('.logo') : null;
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
+    const sideNav = document.querySelector('.floating-side-nav');
     const navLinks = document.querySelectorAll('.nav-link');
+    const sideNavLinks = document.querySelectorAll('.floating-side-nav a[href^="#"]');
+    const scrollNavLinks = [...navLinks, ...sideNavLinks];
+    const navSections = Array.from(scrollNavLinks)
+        .map(link => link.getAttribute('href'))
+        .filter(href => href && href.startsWith('#') && href !== '#')
+        .map(id => document.querySelector(id))
+        .filter(Boolean);
 
     // 滚动时添加背景效果
-    let lastScroll = 0;
     window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 50) {
-            navbar.classList.add('scrolled');
-        } else {
+
+        // 滚动后把品牌入口“吸附”到右侧菜单
+        const shouldDockBrand = currentScroll > 140;
+        if (shouldDockBrand) {
             navbar.classList.remove('scrolled');
+            navbar.classList.add('docked');
+        } else {
+            navbar.classList.toggle('scrolled', currentScroll > 50);
+            navbar.classList.remove('docked');
         }
-        
-        lastScroll = currentScroll;
+
+        if (sideNav) sideNav.classList.toggle('show-brand', shouldDockBrand);
+        if (navbarLogo) {
+            navbarLogo.style.opacity = shouldDockBrand ? '0' : '1';
+            navbarLogo.style.pointerEvents = shouldDockBrand ? 'none' : 'auto';
+        }
+
+        // 根据视口位置高亮当前导航项
+        const offset = navbar.offsetHeight + 120;
+        let activeId = '';
+        navSections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - offset) {
+                activeId = `#${section.id}`;
+            }
+        });
+        scrollNavLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === activeId;
+            link.classList.toggle('active', isActive);
+            if (isActive && link.classList.contains('nav-link')) {
+                link.setAttribute('aria-current', 'page');
+            } else if (link.classList.contains('nav-link')) {
+                link.removeAttribute('aria-current');
+            }
+        });
     });
 
     // 移动端菜单切换
-    if (navToggle) {
+    if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
@@ -49,20 +82,23 @@ function initNavbar() {
     // 点击导航链接后关闭菜单
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (navToggle) navToggle.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
             document.body.style.overflow = '';
         });
     });
 
     // 点击外部关闭菜单
     document.addEventListener('click', function(e) {
-        if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
-            navToggle.classList.remove('active');
+        if (navMenu && !navbar.contains(e.target) && navMenu.classList.contains('active')) {
+            if (navToggle) navToggle.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
         }
     });
+
+    // 首屏时也同步一次激活状态
+    window.dispatchEvent(new Event('scroll'));
 }
 
 /**
@@ -383,104 +419,3 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.style.setProperty('--transition-slow', '0s');
 }
 
-/**
- * 倒计时功能
- * 7天倒计时，精确到秒
- */
-function initCountdown() {
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-    const countdownTimer = document.getElementById('countdownTimer');
-    
-    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-    
-    // 设置目标时间：当前时间 + 7天
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 7);
-    targetDate.setHours(0, 0, 0, 0);
-    
-    let previousValues = {
-        days: '07',
-        hours: '00',
-        minutes: '00',
-        seconds: '00'
-    };
-    
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-        
-        if (distance < 0) {
-            // 倒计时结束
-            clearInterval(countdownInterval);
-            showCompleteMessage();
-            return;
-        }
-        
-        // 计算时间
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        // 格式化数字
-        const formattedDays = String(days).padStart(2, '0');
-        const formattedHours = String(hours).padStart(2, '0');
-        const formattedMinutes = String(minutes).padStart(2, '0');
-        const formattedSeconds = String(seconds).padStart(2, '0');
-        
-        // 更新显示，添加翻转动画
-        updateNumberWithAnimation(daysEl, formattedDays, previousValues.days);
-        updateNumberWithAnimation(hoursEl, formattedHours, previousValues.hours);
-        updateNumberWithAnimation(minutesEl, formattedMinutes, previousValues.minutes);
-        updateNumberWithAnimation(secondsEl, formattedSeconds, previousValues.seconds);
-        
-        // 保存当前值
-        previousValues = {
-            days: formattedDays,
-            hours: formattedHours,
-            minutes: formattedMinutes,
-            seconds: formattedSeconds
-        };
-    }
-    
-    function updateNumberWithAnimation(element, newValue, oldValue) {
-        if (newValue !== oldValue) {
-            element.classList.add('flip');
-            element.textContent = newValue;
-            
-            setTimeout(() => {
-                element.classList.remove('flip');
-            }, 600);
-        }
-    }
-    
-    function showCompleteMessage() {
-        if (countdownTimer) {
-            countdownTimer.innerHTML = `
-                <div class="countdown-complete show">
-                    <h3>🎉 产品已上线！</h3>
-                    <p>感谢您的耐心等待，TG Reach 现已正式发布</p>
-                </div>
-            `;
-        }
-    }
-    
-    // 立即执行一次
-    updateCountdown();
-    
-    // 每秒更新
-    const countdownInterval = setInterval(updateCountdown, 1000);
-    
-    // 页面可见性变化时优化性能
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            // 页面不可见时，降低更新频率（可选）
-        } else {
-            // 页面可见时，立即更新
-            updateCountdown();
-        }
-    });
-}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with your production domain before deploy
+Sitemap: https://tg-reach.example.com/sitemap.xml
