@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollAnimations();
     initDownloadButton();
+    initScreenshotsLightbox();
     initAOS();
 });
 
@@ -173,8 +174,15 @@ function initDownloadButton() {
     const toast = document.getElementById('toast');
     let toastTimeout;
     let isDownloading = false;
+    let cachedLatestInstaller = null;
+
+    const API_LATEST_INSTALLER_URL = 'https://api.douforge.com/api/installer/latest';
+    const REQUEST_TIMEOUT_MS = 15000;
 
     if (downloadBtn && toast) {
+        // 首次进入页面时预取一次版本/大小信息，更新展示
+        refreshLatestInstallerUi().catch(() => {});
+
         downloadBtn.addEventListener('click', async function(e) {
             e.preventDefault();
             
@@ -191,53 +199,113 @@ function initDownloadButton() {
             downloadBtn.disabled = true;
 
             try {
-                let downloadUrl = null;
-                let errorMsg = '';
-                
-                try {
-                    const response = await fetch('http://115.159.117.241:9960/api/installer/latest', {
-                        method: 'GET',
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        const data = await response.json();
-                        console.log('API返回数据:', data);
-                        if (data.download_url) {
-                            downloadUrl = data.download_url;
-                        } else {
-                            errorMsg = 'API返回数据中没有download_url';
-                        }
-                    } else {
-                        errorMsg = `API请求失败: ${response.status}`;
-                    }
-                } catch (fetchError) {
-                    console.error('Fetch错误:', fetchError);
-                    errorMsg = `网络错误: ${fetchError.message}`;
-                }
-                
-                if (downloadUrl) {
-                    // 获取到下载链接，直接跳转下载
-                    console.log('开始下载:', downloadUrl);
-                    window.location.href = downloadUrl;
-                    showToast('下载已开始，请稍候...');
-                } else {
-                    // 无法获取下载链接
-                    console.error('获取下载链接失败:', errorMsg);
-                    showToast('获取下载链接失败: ' + errorMsg + '，请检查控制台');
+                const latest = await getLatestInstaller();
+                const downloadUrl = latest?.download_url;
+
+                if (!downloadUrl || typeof downloadUrl !== 'string') {
+                    showToast('获取下载链接失败：API 返回无效');
+                    return;
                 }
 
+                triggerDownload(downloadUrl, latest?.file_name);
+                showToast('下载已开始，请稍候...');
+
             } catch (error) {
-                console.error('下载失败:', error);
-                showToast('下载失败: ' + error.message);
+                showToast('下载失败：' + (error?.message || '未知错误'));
             } finally {
                 isDownloading = false;
                 downloadBtn.innerHTML = originalText;
                 downloadBtn.disabled = false;
+                // 恢复后再刷新一次 UI（比如版本升级了）
+                refreshLatestInstallerUi().catch(() => {});
             }
         });
+    }
+
+    async function fetchJsonWithTimeout(url, timeoutMs) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+        try {
+            const res = await fetch(url, {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' },
+                signal: controller.signal
+            });
+            if (!res.ok) {
+                throw new Error(`请求失败 (${res.status})`);
+            }
+            return await res.json();
+        } finally {
+            clearTimeout(timeoutId);
+        }
+    }
+
+    function formatBytes(bytes) {
+        const num = Number(bytes);
+        if (!Number.isFinite(num) || num <= 0) return '';
+        const units = ['B', 'KB', 'MB', 'GB'];
+        let size = num;
+        let unitIdx = 0;
+        while (size >= 1024 && unitIdx < units.length - 1) {
+            size /= 1024;
+            unitIdx++;
+        }
+        const precision = unitIdx === 0 ? 0 : unitIdx === 1 ? 1 : 2;
+        return `${size.toFixed(precision)} ${units[unitIdx]}`;
+    }
+
+    function getFilenameFromUrl(url) {
+        try {
+            const u = new URL(url);
+            const last = u.pathname.split('/').filter(Boolean).pop();
+            return last ? decodeURIComponent(last) : '';
+        } catch {
+            return '';
+        }
+    }
+
+    function triggerDownload(url, suggestedName) {
+        // 直接跳转会离开当前页面；这里优先用新窗口/标签触发下载
+        // 注意：download 属性在跨域场景可能会被浏览器忽略，但不会影响下载本身。
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const filename = (typeof suggestedName === 'string' && suggestedName.trim())
+            ? suggestedName.trim()
+            : getFilenameFromUrl(url);
+        if (filename) a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    }
+
+    async function getLatestInstaller() {
+        if (cachedLatestInstaller) return cachedLatestInstaller;
+        const data = await fetchJsonWithTimeout(API_LATEST_INSTALLER_URL, REQUEST_TIMEOUT_MS);
+        cachedLatestInstaller = data;
+        return data;
+    }
+
+    async function refreshLatestInstallerUi() {
+        try {
+            // 每次刷新都重新拉取，避免缓存导致版本不更新
+            cachedLatestInstaller = null;
+            const latest = await getLatestInstaller();
+
+            const versionTag = downloadBtn.querySelector('.version-tag');
+            if (versionTag && latest?.version) {
+                versionTag.textContent = `v${latest.version}`;
+            }
+
+            const noteEl = document.querySelector('.download-note');
+            if (noteEl) {
+                const formatted = formatBytes(latest?.file_size);
+                noteEl.textContent = formatted ? `文件大小：约 ${formatted}` : '文件大小：';
+            }
+        } catch {
+            // 静默失败：不影响用户点击时再获取
+        }
     }
 
     function showToast(message) {
@@ -258,6 +326,62 @@ function initDownloadButton() {
             toast.classList.remove('show');
         }, 3000);
     }
+}
+
+/**
+ * 截图预览 Lightbox
+ */
+function initScreenshotsLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const cards = document.querySelectorAll('.screenshot-card');
+
+    if (!lightbox || !lightboxImage || !lightboxCaption || !cards.length) return;
+
+    const backdrop = lightbox.querySelector('.lightbox-backdrop');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    let lastActiveElement = null;
+
+    function open(src, alt) {
+        lastActiveElement = document.activeElement;
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || '';
+        lightboxCaption.textContent = alt || '';
+        lightbox.classList.add('show');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function close() {
+        lightbox.classList.remove('show');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImage.src = '';
+        lightboxCaption.textContent = '';
+        if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+            lastActiveElement.focus();
+        }
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const src = card.getAttribute('data-screenshot-src');
+            const alt = card.getAttribute('data-screenshot-alt') || '';
+            if (src) open(src, alt);
+        });
+    });
+
+    if (backdrop) backdrop.addEventListener('click', close);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+            close();
+        }
+    });
 }
 
 /**
