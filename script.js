@@ -178,6 +178,8 @@ function initDownloadButton() {
 
     const API_LATEST_INSTALLER_URL = 'https://tgreach-api.douforge.com/api/installer/latest';
     const REQUEST_TIMEOUT_MS = 15000;
+    
+    console.log('下载API地址:', API_LATEST_INSTALLER_URL);
 
     if (downloadBtn && toast) {
         // 首次进入页面时预取一次版本/大小信息，更新展示
