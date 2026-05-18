@@ -228,13 +228,30 @@ function initDownloadButton() {
         try {
             const res = await fetch(url, {
                 method: 'GET',
-                headers: { 'Accept': 'application/json' },
-                signal: controller.signal
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                signal: controller.signal,
+                mode: 'cors',
+                cache: 'no-cache'
             });
             if (!res.ok) {
-                throw new Error(`请求失败 (${res.status})`);
+                const errorText = await res.text().catch(() => '');
+                throw new Error(`请求失败 (${res.status})${errorText ? ': ' + errorText : ''}`);
             }
             return await res.json();
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                throw new Error('请求超时，请检查网络连接');
+            }
+            if (error.message?.includes('CORS')) {
+                throw new Error('跨域请求被阻止，请联系管理员配置CORS');
+            }
+            if (error.message?.includes('Failed to fetch')) {
+                throw new Error('无法连接到服务器，请检查网络或稍后重试');
+            }
+            throw new Error(error.message || '网络请求失败');
         } finally {
             clearTimeout(timeoutId);
         }
