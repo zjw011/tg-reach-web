@@ -176,7 +176,7 @@ function initDownloadButton() {
     let isDownloading = false;
     let cachedLatestInstaller = null;
 
-    const API_LATEST_INSTALLER_URL = 'https://api.douforge.com/api/installer/latest';
+    const API_LATEST_INSTALLER_URL = 'https://tgreach-api.douforge.com/api/installer/latest';
     const REQUEST_TIMEOUT_MS = 15000;
 
     if (downloadBtn && toast) {
