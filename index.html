@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TG Reach - TG智能助手工具</title>
-    <meta name="description" content="TG Reach - 专业的TG电脑端智能助手，支持自动回复、机器人管理、群消息监控等功能">
-    <meta name="keywords" content="TG Reach,TG智能助手,TG自动回复,Telegram自动化工具,群消息监控,机器人管理,Windows桌面应用">
+    <title>TG Reach - TG 消息触达智能助手</title>
+    <meta name="description" content="一个人管好多个 TG 号：7×24 自动回复、批量私信触达、CRM 跟进。本地运行数据不上云，3 天全功能试用仅需 1.9 USDT。">
+    <meta name="keywords" content="TG Reach,TG消息触达,TG自动回复,Telegram群发,Telegram CRM,频道搬运,群组采集,Windows桌面应用,卡密激活">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name="theme-color" content="#0088cc">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
-    <meta property="og:title" content="TG Reach - TG智能助手工具">
-    <meta property="og:description" content="专业的 TG 电脑端智能助手，支持自动回复、机器人管理、群消息监控。">
+    <meta property="og:title" content="TG Reach - TG 消息触达智能助手">
+    <meta property="og:description" content="Windows 桌面端 TG 多账号运营工具：自动回复、批量触达、CRM、群组增长与频道搬运。">
     <meta property="og:image" content="logo.ico">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TG Reach - TG智能助手工具">
-    <meta name="twitter:description" content="本地运行、安全可靠的 TG 自动化助手。">
+    <meta name="twitter:title" content="TG Reach - TG 消息触达智能助手">
+    <meta name="twitter:description" content="多账号统一管理，自动回复与批量触达，数据本地存储，自行注册 + 卡密兑换。">
     <meta name="twitter:image" content="logo.ico">
     <link rel="icon" type="image/x-icon" href="logo.ico">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,24 +31,30 @@
           "name": "TG Reach",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Windows 10, Windows 11",
-          "description": "TG Reach 是一款本地运行的 TG 智能助手工具，支持自动回复、机器人管理、群消息监控和多媒体自动化触达。",
+          "description": "TG Reach 是 Windows 桌面端 Telegram 多账号运营工具，支持自动回复、批量私信、CRM、群组拓客与频道搬运，数据本地存储，卡密授权激活。",
+          "softwareVersion": "1.0.0",
           "offers": {
             "@type": "Offer",
-            "price": "0",
+            "url": "https://pay.ldxp.cn/shop/E9W6JWP6",
             "priceCurrency": "CNY"
           },
           "featureList": [
-            "账号登录管理",
-            "自定义自动回复",
-            "多媒体自动回复",
-            "机器人管理系统",
-            "群消息监控"
+            "多账号与 Bot 统一管理",
+            "TG 自动回复（关键词/全私信）",
+            "TG 消息分发（批量私信）",
+            "客户管理 CRM",
+            "群组采集与批量加群",
+            "群推私信",
+            "频道内容搬运",
+            "消息组与媒体库",
+            "运营仪表盘",
+            "本地加密备份"
           ]
         },
         {
           "@type": "Organization",
           "name": "TG Reach",
-          "description": "专注于 TG 自动化触达与消息处理效率工具。"
+          "description": "专注于 Telegram 多账号运营与消息触达效率工具。"
         },
         {
           "@type": "FAQPage",
@@ -58,7 +64,7 @@
               "name": "TG Reach 是什么？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "TG Reach 是一款运行在 Windows 的 TG 智能助手工具，用于自动回复、群消息监控、机器人管理和消息触达效率提升。"
+                "text": "TG Reach 是 Windows 桌面端 Telegram 多账号运营工具，帮助统一管理个人号与 Bot，完成自动回复、批量触达、客户跟进、群组拓展与频道搬运。"
               }
             },
             {
@@ -66,7 +72,15 @@
               "name": "数据是否上传到云端？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "不会。TG Reach 采用本地运行模式，账号信息、配置和媒体资源默认在本地存储。"
+                "text": "业务数据默认不上传云端。TG 账号、联系人、聊天记录、配置与媒体资源存储在本地 SQLite 与 ~/.tgreach 目录，支持加密备份导出。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何激活使用？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "下载软件后自行注册 TG Reach 账号，在卡密商店购买套餐，回到软件内兑换卡密即可激活。连接槽决定可同时启用的个人号与 Bot 数量。"
               }
             },
             {
@@ -109,37 +123,47 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    <span>Windows 桌面应用</span>
+                    <span>v1.0.0 正式版 · Windows 桌面端</span>
                 </div>
                 <h1 class="hero-title">
-                    <span class="title-line">消息触达助手</span>
-                    <span class="title-line highlight">让转化更稳</span>
+                    <span class="title-line">一个人，管好</span>
+                    <span class="title-line highlight">多个 TG 号的触达</span>
                 </h1>
                 <p class="hero-subtitle">
-                    面向社群运营、客服与营销团队。多账号统一管理、自动回复与关键词跟进，
-                    用更少人力完成更高频的消息触达与线索转化。
+                    私信太多回不过来？TG Reach 帮你 7×24 自动接客、批量触达线索、CRM 快速跟进。
+                    本地运行，账号与数据不上云——一个人也能撑起一个小团队的 TG 运营。
                 </p>
-                <div class="hero-cta">
-                    <a href="#download" class="btn btn-primary">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
-                        </svg>
-                        立即下载
-                    </a>
-                    <a href="#features" class="btn btn-secondary">了解更多</a>
+                <div class="hero-audience">
+                    <span>跨境电商</span>
+                    <span>社群私域</span>
+                    <span>海外客服</span>
+                    <span>渠道拓客</span>
+                    <span>多号矩阵</span>
                 </div>
+                <div class="hero-cta">
+                    <a href="https://pay.ldxp.cn/shop/E9W6JWP6" class="btn btn-primary btn-trial" target="_blank" rel="noopener noreferrer">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+                        </svg>
+                        1.9U 试用 3 天全功能
+                    </a>
+                    <a href="#download" class="btn btn-secondary">免费下载</a>
+                </div>
+                <p class="hero-trust">
+                    不会操作？<a href="https://t.me/TG_Reach_a" target="_blank" rel="noopener noreferrer">加入 TG 交流群</a>，5 分钟上手
+                </p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">核心功能</span>
+                        <span class="stat-number">1.9U</span>
+                        <span class="stat-label">试用起 · 低成本试错</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">自动运行</span>
+                        <span class="stat-number">7×24</span>
+                        <span class="stat-label">自动回复接线索</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">100%</span>
-                        <span class="stat-label">安全可靠</span>
+                        <span class="stat-label">本地存储不上云</span>
                     </div>
                 </div>
             </div>
@@ -153,51 +177,14 @@
                     </div>
                     <div class="security-badge">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
-                        </svg>
-                        <span>账号信息本地存储</span>
-                    </div>
-                    <div class="security-badge">
-                        <svg viewBox="0 0 24 24" fill="none">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
                         </svg>
-                        <span>隐私完全掌控</span>
+                        <span>全套餐功能一致</span>
                     </div>
                 </div>
-                <div class="app-mockup">
-                    <div class="mockup-header">
-                        <div class="mockup-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="mockup-content">
-                        <div class="chat-item">
-                            <div class="chat-avatar"></div>
-                            <div class="chat-info">
-                                <div class="chat-name">自动回复机器人</div>
-                                <div class="chat-preview">已设置自动回复规则: 3条</div>
-                            </div>
-                            <div class="chat-status active"></div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="chat-avatar"></div>
-                            <div class="chat-info">
-                                <div class="chat-name">营销群组监控</div>
-                                <div class="chat-preview">关键词匹配: 5个群组</div>
-                            </div>
-                            <div class="chat-status"></div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="chat-avatar"></div>
-                            <div class="chat-info">
-                                <div class="chat-name">多媒体自动回复</div>
-                                <div class="chat-preview">支持: 视频、图片、语音</div>
-                            </div>
-                            <div class="chat-status active"></div>
-                        </div>
-                    </div>
+                <div class="hero-screenshot">
+                    <img src="assets/screenshots/autoreply.png" alt="TG Reach 自动回复界面实机截图" loading="eager" />
+                    <span class="hero-screenshot-caption">真实产品界面 · TG 自动回复</span>
                 </div>
             </div>
         </div>
@@ -209,21 +196,56 @@
         </div>
     </section>
 
+    <!-- 适用场景 -->
+    <section class="use-cases" id="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">适用场景</span>
+                <h2 class="section-title">不管你是哪种 TG 运营，都能省人力</h2>
+                <p class="section-desc">从接客到触达再到跟进，一台 Windows 电脑本地搞定</p>
+            </div>
+            <div class="use-cases-grid">
+                <article class="use-case-card">
+                    <span class="use-case-icon">🛒</span>
+                    <h3>跨境电商 / 外贸</h3>
+                    <p>多店多号同时运营，自动回复接询盘，批量私信做客户回访，CRM 备注跟进不再丢单。</p>
+                </article>
+                <article class="use-case-card">
+                    <span class="use-case-icon">👥</span>
+                    <h3>社群 / 私域运营</h3>
+                    <p>关键词搜群批量加入，群内成员精准私信拓客，活动通知多轮触达，转化链路一条龙。</p>
+                </article>
+                <article class="use-case-card">
+                    <span class="use-case-icon">💬</span>
+                    <h3>客服 / 售前接待</h3>
+                    <p>7×24 自动应答常见问题，命中关键词才回复，人工只需处理高意向客户，效率翻倍。</p>
+                </article>
+                <article class="use-case-card">
+                    <span class="use-case-icon">📡</span>
+                    <h3>频道 / 内容矩阵</h3>
+                    <p>跨频道批量搬运内容，三种模式任选，断点续传不中断，快速搭建内容矩阵。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- GEO 语义概览 -->
     <section class="geo-overview" id="overview">
         <div class="container">
             <div class="geo-overview-card">
                 <h2 class="geo-title">TG Reach 是什么？</h2>
                 <p class="geo-intro">
-                    TG Reach 是一款面向 Windows 的 TG 消息触达自动化工具。它聚焦于自动回复、群消息监控与机器人管理，
-                    通过本地运行架构帮助团队提升触达效率，同时保障数据隐私与可控性。
+                    一款 Windows 桌面端 Telegram 多账号运营工具——不是网页 SaaS，不是单一 Bot 脚本。
+                    自动回复、批量触达、CRM、群组拓客、频道搬运全部集成，业务数据存在你的电脑上。
                 </p>
                 <div class="geo-tags">
-                    <span class="geo-tag">TG 自动回复软件</span>
-                    <span class="geo-tag">Telegram 触达工具</span>
-                    <span class="geo-tag">Windows 桌面应用</span>
-                    <span class="geo-tag">本地运行</span>
-                    <span class="geo-tag">隐私安全</span>
+                    <span class="geo-tag">TG 自动回复</span>
+                    <span class="geo-tag">批量私信触达</span>
+                    <span class="geo-tag">Telegram CRM</span>
+                    <span class="geo-tag">频道搬运</span>
+                    <span class="geo-tag">群组拓客</span>
+                    <span class="geo-tag">Windows 桌面</span>
+                    <span class="geo-tag">本地存储</span>
                 </div>
             </div>
         </div>
@@ -234,75 +256,136 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">核心功能</span>
-                <h2 class="section-title">强大的自动化工具</h2>
-                <p class="section-desc">专为 TG 用户设计的一站式解决方案，提升您的沟通效率</p>
+                <h2 class="section-title">一站式 TG 运营工具链</h2>
+                <p class="section-desc">从素材编排、自动触达到客户跟进与群组增长，覆盖完整运营闭环</p>
             </div>
             
             <div class="features-grid">
-                <!-- 功能卡片 1 -->
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">账号登录管理</h3>
-                    <p class="feature-desc">支持 TG 个人账号安全登录，采用官方 API，确保账号安全与稳定性</p>
-                </div>
-
-                <!-- 功能卡片 2 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card feature-card-core" data-aos="fade-up">
+                    <span class="feature-badge">核心</span>
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">自定义自动回复</h3>
-                    <p class="feature-desc">灵活设置自动回复内容，支持文本模板，让沟通更加智能高效</p>
+                    <h3 class="feature-title">TG 自动回复</h3>
+                    <p class="feature-desc">7×24 私信/关键词自动应答。支持全私信、多规则优先级、冷却防刷屏，个人号与 Bot 双通道，完整日志可追溯。</p>
                 </div>
 
-                <!-- 功能卡片 3 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card feature-card-core" data-aos="fade-up" data-aos-delay="100">
+                    <span class="feature-badge">核心</span>
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" fill="currentColor"/>
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">多媒体自动回复</h3>
-                    <p class="feature-desc">支持视频、图片、语音等多种媒体格式的自动回复，丰富您的互动方式</p>
+                    <h3 class="feature-title">TG 消息分发</h3>
+                    <p class="feature-desc">按手机号库或通讯录批量私信。可设时间窗、随机间隔与多轮循环，模拟人工节奏，降低封号风险。</p>
                 </div>
 
-                <!-- 功能卡片 4 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">回复间隔设置</h3>
-                    <p class="feature-desc">自定义回复间隔时间，模拟真实用户行为，避免被系统识别为机器人</p>
-                </div>
-
-                <!-- 功能卡片 5 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">机器人管理系统</h3>
-                    <p class="feature-desc">轻松添加和管理 BotFather 创建的机器人，扩展您的自动化能力</p>
-                </div>
-
-                <!-- 功能卡片 6 -->
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-card feature-card-core" data-aos="fade-up" data-aos-delay="200">
+                    <span class="feature-badge">核心</span>
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h3 class="feature-title">群消息监控</h3>
-                    <p class="feature-desc">自动监控群组消息，识别关键词并自动回复，把握每一个商机</p>
+                    <h3 class="feature-title">客户管理 CRM</h3>
+                    <p class="feature-desc">联系人同步、备注筛选、聊天窗口快速回复。可选实时消息监听，把 Telegram 联系人变成可管理的客户池。</p>
+                </div>
+
+                <div class="feature-card feature-card-core" data-aos="fade-up" data-aos-delay="300">
+                    <span class="feature-badge">核心</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">多账号统一管理</h3>
+                    <p class="feature-desc">个人号 + Bot 集中登录、启用与校验。内置养号模式，代理环境下自动重连，云端控制连接槽数量。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">群组采集 & 加群</h3>
+                    <p class="feature-desc">关键词搜群入库，筛选后批量加入。内置群验证自动处理，省人工点按钮。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">群推私信</h3>
+                    <p class="feature-desc">指定群组，按间隔批量私信成员。支持关键词过滤，适合精准拓客与活动拉新。</p>
+                </div>
+
+                <div class="feature-card feature-card-new" data-aos="fade-up" data-aos-delay="600">
+                    <span class="feature-badge feature-badge-new">新上线</span>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">频道搬运</h3>
+                    <p class="feature-desc">跨频道/群组批量复制内容。转发、发送、下载上传三种模式，支持断点续传与类型筛选。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">运营仪表盘</h3>
+                    <p class="feature-desc">一屏掌握回复率、触达量、联系人增长与任务进度。近 7 日趋势与运营 KPI 一目了然。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作流示意 -->
+    <section class="workflow" id="workflow">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">运营闭环</span>
+                <h2 class="section-title">素材 → 计划 → 触达 → 跟进 → 数据</h2>
+                <p class="section-desc">消息组与媒体库统一编排，各模块共用同一套素材，改一处全局生效</p>
+            </div>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <span class="workflow-num">01</span>
+                    <h3>准备素材</h3>
+                    <p>消息组 + 媒体库编排话术与内容包</p>
+                </div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
+                <div class="workflow-step">
+                    <span class="workflow-num">02</span>
+                    <h3>配置计划</h3>
+                    <p>自动回复、消息分发或群推任务</p>
+                </div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
+                <div class="workflow-step">
+                    <span class="workflow-num">03</span>
+                    <h3>执行触达</h3>
+                    <p>可控节奏批量私信或 7×24 自动应答</p>
+                </div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
+                <div class="workflow-step">
+                    <span class="workflow-num">04</span>
+                    <h3>客户跟进</h3>
+                    <p>CRM 备注筛选，聊天窗口快速回复</p>
+                </div>
+                <div class="workflow-arrow" aria-hidden="true">→</div>
+                <div class="workflow-step">
+                    <span class="workflow-num">05</span>
+                    <h3>复盘数据</h3>
+                    <p>仪表盘查看效果，持续优化策略</p>
                 </div>
             </div>
         </div>
@@ -324,7 +407,7 @@
                         </svg>
                     </div>
                     <h3 class="security-card-title">本地运行模式</h3>
-                    <p class="security-card-desc">所有程序功能在您的设备本地运行，无需连接外部服务器，杜绝数据外泄风险</p>
+                    <p class="security-card-desc">核心业务在本地设备运行，TG 账号、联系人、聊天记录与配置不上传云端，杜绝数据外泄风险</p>
                 </div>
                 <div class="security-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="security-icon">
@@ -332,8 +415,8 @@
                             <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h3 class="security-card-title">本地数据库存储</h3>
-                    <p class="security-card-desc">您的 TG 账号信息、配置设置均保存在本地数据库中，不会上传至任何云端服务器</p>
+                    <h3 class="security-card-title">SQLite 本地数据库</h3>
+                    <p class="security-card-desc">数据存储于本地 tgreach.db 与 ~/.tgreach 目录，支持模块化加密备份导出/导入，换机不丢客户与配置</p>
                 </div>
                 <div class="security-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="security-icon">
@@ -363,20 +446,20 @@
             <div class="showcase-item">
                 <div class="showcase-content">
                     <span class="showcase-tag">智能回复</span>
-                    <h3 class="showcase-title">自动化消息处理</h3>
-                    <p class="showcase-desc">设置自定义回复规则，当收到特定关键词消息时，系统会自动发送预设回复。支持多种媒体类型，让您的回复更加生动有效。</p>
+                    <h3 class="showcase-title">7×24 自动接私信</h3>
+                    <p class="showcase-desc">关键词精准触发或多规则优先级匹配，支持全私信模式与消息组素材库。冷却防刷屏，每条回复完整日志可追溯，个人号与 Bot 双通道覆盖。</p>
                     <ul class="showcase-list">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            关键词触发自动回复
+                            全部私信 / 关键词监测双模式
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            支持文本、图片、视频、语音
+                            文本、图片、视频、语音多媒体回复
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            自定义回复间隔时间
+                            冷却时间、引用回复、群内转私聊
                         </li>
                     </ul>
                 </div>
@@ -400,21 +483,21 @@
 
             <div class="showcase-item reverse">
                 <div class="showcase-content">
-                    <span class="showcase-tag">群组监控</span>
-                    <h3 class="showcase-title">群消息智能监控</h3>
-                    <p class="showcase-desc">实时监控多个群组的消息动态，当检测到预设关键词时，立即执行相应操作。不错过任何重要信息，让您的营销更加精准。</p>
+                    <span class="showcase-tag">批量触达</span>
+                    <h3 class="showcase-title">可控节奏的批量私信</h3>
+                    <p class="showcase-desc">从手机号库或通讯录导入目标，按消息组顺序或随机发送。支持每日时间窗、消息间随机间隔与多轮循环，模拟人工操作降低限流风险。</p>
                     <ul class="showcase-list">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            多群组同时监控
+                            手机号库 / 通讯录双来源
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            关键词智能识别
+                            时间窗 + 随机间隔 + 多轮循环
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            自动执行预设操作
+                            任务级与消息级双日志审计
                         </li>
                     </ul>
                 </div>
@@ -422,28 +505,28 @@
                     <div class="showcase-card dark">
                         <div class="group-list">
                             <div class="group-item">
-                                <div class="group-icon">G1</div>
+                                <div class="group-icon">P1</div>
                                 <div class="group-info">
-                                    <div class="group-name">产品推广群 A</div>
-                                    <div class="group-status">监控中 • 3个关键词</div>
+                                    <div class="group-name">活动通知 · 第 2 轮</div>
+                                    <div class="group-status">运行中 • 已发送 86/200</div>
                                 </div>
                                 <div class="group-indicator active"></div>
                             </div>
                             <div class="group-item">
-                                <div class="group-icon">G2</div>
+                                <div class="group-icon">P2</div>
                                 <div class="group-info">
-                                    <div class="group-name">客户服务群 B</div>
-                                    <div class="group-status">监控中 • 5个关键词</div>
-                                </div>
-                                <div class="group-indicator active"></div>
-                            </div>
-                            <div class="group-item">
-                                <div class="group-icon">G3</div>
-                                <div class="group-info">
-                                    <div class="group-name">市场调研群 C</div>
-                                    <div class="group-status">已暂停</div>
+                                    <div class="group-name">客户回访计划</div>
+                                    <div class="group-status">等待中 • 09:00 开始</div>
                                 </div>
                                 <div class="group-indicator"></div>
+                            </div>
+                            <div class="group-item">
+                                <div class="group-icon">P3</div>
+                                <div class="group-info">
+                                    <div class="group-name">线索触达 · 已完成</div>
+                                    <div class="group-status">成功 312 · 失败 8</div>
+                                </div>
+                                <div class="group-indicator active"></div>
                             </div>
                         </div>
                     </div>
@@ -482,59 +565,225 @@
         </div>
     </section>
 
-    <!-- 套餐价格 -->
-    <section class="pricing" id="pricing">
+    <!-- 对比优势 -->
+    <section class="compare" id="compare">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">套餐价格</span>
-                <h2 class="section-title">按需选择适合您的版本</h2>
-                <p class="section-desc">所有套餐均支持本地运行，按账号额度灵活扩展</p>
+                <span class="section-tag">为什么选择 TG Reach</span>
+                <h2 class="section-title">比手动更省人，比纯 Bot 更灵活</h2>
+                <p class="section-desc">个人号 + Bot 双通道，本地运行不绑云端，全功能工具链一个软件搞定</p>
             </div>
-
-            <div class="pricing-grid">
-                <article class="pricing-card" data-aos="fade-up">
-                    <span class="pricing-badge">新手首选</span>
-                    <p class="pricing-plan">试用套餐</p>
-                    <p class="pricing-price">1.9 <span>USDT</span></p>
-                    <p class="pricing-cycle">3 天</p>
-                    <ul class="pricing-list">
-                        <li>可绑定账号额度：3</li>
-                        <li>适合首次体验产品能力</li>
-                    </ul>
-                </article>
-
-                <article class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
-                    <span class="pricing-badge pricing-badge-hot">推荐</span>
-                    <p class="pricing-plan">基础套餐</p>
-                    <p class="pricing-price">18 <span>USDT</span></p>
-                    <p class="pricing-cycle">每月</p>
-                    <ul class="pricing-list">
-                        <li>可绑定账号额度：5</li>
-                        <li>适合稳定运营与日常触达</li>
-                    </ul>
-                </article>
-
-                <article class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-                    <span class="pricing-badge">高配版</span>
-                    <p class="pricing-plan">进阶套餐</p>
-                    <p class="pricing-price">30 <span>USDT</span></p>
-                    <p class="pricing-cycle">每月</p>
-                    <ul class="pricing-list">
-                        <li>可绑定账号额度：15</li>
-                        <li>适合多账号规模化场景</li>
-                    </ul>
-                </article>
+            <div class="compare-table-wrap">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>能力</th>
+                            <th>手动运营</th>
+                            <th>纯 Bot 工具</th>
+                            <th class="compare-highlight">TG Reach</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>个人号私信触达</td>
+                            <td class="compare-no">费时费力</td>
+                            <td class="compare-no">不支持</td>
+                            <td class="compare-yes">✓ 批量 + 可控节奏</td>
+                        </tr>
+                        <tr>
+                            <td>7×24 自动回复</td>
+                            <td class="compare-no">需人工盯屏</td>
+                            <td class="compare-yes">✓ 仅 Bot</td>
+                            <td class="compare-yes">✓ 个人号 + Bot</td>
+                        </tr>
+                        <tr>
+                            <td>多账号统一管理</td>
+                            <td class="compare-no">切换麻烦</td>
+                            <td class="compare-no">单 Bot</td>
+                            <td class="compare-yes">✓ 最多 15 号</td>
+                        </tr>
+                        <tr>
+                            <td>CRM 客户跟进</td>
+                            <td class="compare-partial">分散在各号</td>
+                            <td class="compare-no">无</td>
+                            <td class="compare-yes">✓ 本地 CRM</td>
+                        </tr>
+                        <tr>
+                            <td>群组拓客 / 频道搬运</td>
+                            <td class="compare-no">几乎不可能</td>
+                            <td class="compare-no">无</td>
+                            <td class="compare-yes">✓ 内置工具链</td>
+                        </tr>
+                        <tr>
+                            <td>数据存储</td>
+                            <td class="compare-partial">在各设备</td>
+                            <td class="compare-no">第三方云端</td>
+                            <td class="compare-yes">✓ 100% 本地</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- 未来功能路线图 -->
+    <!-- 快速上手 -->
+    <section class="activation" id="activation">
+        <div class="container">
+            <div class="activation-card">
+                <div class="activation-content">
+                    <span class="section-tag">30 秒看懂</span>
+                    <h2 class="activation-title">四步激活，不会也能上手</h2>
+                    <p class="activation-desc">注册免费，先下载体验界面，满意再购卡。全程自助，无需等待开通。</p>
+                    <ol class="activation-steps">
+                        <li>
+                            <span class="activation-num">1</span>
+                            <div>
+                                <strong>下载软件</strong>
+                                <p>Windows 单文件 exe，解压即用</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="activation-num">2</span>
+                            <div>
+                                <strong>免费注册</strong>
+                                <p>软件内创建 TG Reach 账号</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="activation-num">3</span>
+                            <div>
+                                <strong>购买卡密</strong>
+                                <p>1.9U 试用 3 天，或按月订阅</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="activation-num">4</span>
+                            <div>
+                                <strong>兑换激活</strong>
+                                <p>软件内输入卡密，立即生效</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="activation-cta">
+                        <a href="https://pay.ldxp.cn/shop/E9W6JWP6" class="btn btn-primary btn-trial" target="_blank" rel="noopener noreferrer">1.9U 立即试用</a>
+                        <a href="https://t.me/TG_Reach_a" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">进群请教</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 套餐价格 -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">卡密授权</span>
+                <h2 class="section-title">全功能开放，按账号数量选套餐</h2>
+                <p class="section-desc">所有套餐功能完全一致，区别仅在于「可同时在线运营的 TG 号 + Bot 数量」</p>
+            </div>
+
+            <div class="pricing-highlight">
+                <span class="pricing-highlight-badge">💡 价值参考</span>
+                <p>基础版 <strong>18 USDT/月</strong> ≈ 每天 <strong>0.6U</strong>，换 5 个号 7×24 自动回复 + 批量触达 + CRM，比雇一个兼职客服划算得多</p>
+            </div>
+
+            <div class="pricing-grid">
+                <article class="pricing-card" data-aos="fade-up">
+                    <span class="pricing-badge">低成本试错</span>
+                    <p class="pricing-plan">试用套餐</p>
+                    <p class="pricing-price">1.9 <span>USDT</span></p>
+                    <p class="pricing-cycle">3 天 · 全功能体验</p>
+                    <ul class="pricing-list">
+                        <li>同时运营 <strong>3</strong> 个号 + Bot</li>
+                        <li>全部 12 项功能无限制</li>
+                        <li>不满意不续，零压力</li>
+                    </ul>
+                    <a href="https://pay.ldxp.cn/shop/E9W6JWP6" class="btn btn-pricing" target="_blank" rel="noopener noreferrer">1.9U 立即试用</a>
+                </article>
+
+                <article class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <span class="pricing-badge pricing-badge-hot">80% 用户选择</span>
+                    <p class="pricing-plan">基础套餐</p>
+                    <p class="pricing-price">18 <span>USDT</span></p>
+                    <p class="pricing-cycle">每月 · 约 0.6U/天</p>
+                    <ul class="pricing-list">
+                        <li>同时运营 <strong>5</strong> 个号 + Bot</li>
+                        <li>全部 12 项功能无限制</li>
+                        <li>适合日常稳定运营</li>
+                    </ul>
+                    <a href="https://pay.ldxp.cn/shop/E9W6JWP6" class="btn btn-pricing btn-pricing-featured" target="_blank" rel="noopener noreferrer">购买卡密</a>
+                </article>
+
+                <article class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="pricing-badge">规模化运营</span>
+                    <p class="pricing-plan">进阶套餐</p>
+                    <p class="pricing-price">30 <span>USDT</span></p>
+                    <p class="pricing-cycle">每月 · 约 1U/天</p>
+                    <ul class="pricing-list">
+                        <li>同时运营 <strong>15</strong> 个号 + Bot</li>
+                        <li>全部 12 项功能无限制</li>
+                        <li>适合多号矩阵团队</li>
+                    </ul>
+                    <a href="https://pay.ldxp.cn/shop/E9W6JWP6" class="btn btn-pricing" target="_blank" rel="noopener noreferrer">购买卡密</a>
+                </article>
+            </div>
+
+            <div class="pricing-note">
+                <p>激活流程：<strong>下载</strong> → <strong>免费注册</strong> → <strong>购卡</strong> → <strong>软件内兑换</strong> · 有疑问？<a href="https://t.me/TG_Reach_a" target="_blank" rel="noopener noreferrer">TG 交流群</a>随时问</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户反馈 -->
+    <section class="social-proof" id="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">用户反馈</span>
+                <h2 class="section-title">运营者真实使用感受</h2>
+                <p class="section-desc">加入 TG 交流群，与更多 TG 运营者交流实操经验</p>
+            </div>
+            <div class="proof-stats">
+                <div class="proof-stat">
+                    <span class="proof-stat-num">v1.0.0</span>
+                    <span class="proof-stat-label">正式版稳定运行</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-stat-num">12</span>
+                    <span class="proof-stat-label">项功能全部可用</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-stat-num">本地</span>
+                    <span class="proof-stat-label">数据不上传云端</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-stat-num">TG 群</span>
+                    <span class="proof-stat-label"><a href="https://t.me/TG_Reach_a" target="_blank" rel="noopener noreferrer">交流 & 售后支持</a></span>
+                </div>
+            </div>
+            <div class="testimonials-grid">
+                <blockquote class="testimonial-card">
+                    <p>「以前三个号来回切，私信一多就漏回。现在自动回复先接一轮，我只需要跟进有意向的，省至少一半时间。」</p>
+                    <footer>— 跨境电商卖家 · 3 号运营</footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p>「消息分发设好时间窗和间隔，批量触达不用熬夜盯。CRM 备注客户状态，跟进不会乱。」</p>
+                    <footer>— 社群运营 · 5 号矩阵</footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p>「最看重本地存储，号和客户数据在自己电脑上。加密备份换机迁移也方便，心里踏实。」</p>
+                    <footer>— 私域团队负责人</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- 版本历程 -->
     <section class="roadmap" id="roadmap">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">未来规划</span>
-                <h2 class="section-title">产品路线图</h2>
-                <p class="section-desc">持续迭代，为您带来更多强大功能</p>
+                <span class="section-tag">持续迭代</span>
+                <h2 class="section-title">v1.0.0 已就绪，更多能力在路上</h2>
+                <p class="section-desc">当前版本功能完整可用，后续将持续优化体验并引入 AI 能力</p>
             </div>
 
             <div class="roadmap-timeline">
@@ -545,38 +794,38 @@
                         <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
                     </div>
                     <div class="roadmap-content">
-                        <span class="roadmap-phase">第一阶段</span>
-                        <h3 class="roadmap-title">核心功能发布</h3>
-                        <p class="roadmap-desc">账号登录、自动回复、多媒体支持、机器人管理等基础功能</p>
+                        <span class="roadmap-phase">v1.0.0 · 现已可用</span>
+                        <h3 class="roadmap-title">完整 TG 运营工具链</h3>
+                        <p class="roadmap-desc">自动回复、批量触达、CRM、养号、群组拓客、频道搬运、仪表盘——现在下载即可使用</p>
                     </div>
                 </div>
 
                 <div class="roadmap-item" data-aos="fade-left">
-                    <div class="roadmap-marker current">
-                        <span class="marker-pulse"></span>
+                    <div class="roadmap-marker completed">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
                     </div>
                     <div class="roadmap-content">
-                        <span class="roadmap-phase">第二阶段</span>
-                        <h3 class="roadmap-title">知识库集成</h3>
-                        <p class="roadmap-desc">支持导入知识库文档，基于内容智能匹配回复，提升回复准确性</p>
+                        <span class="roadmap-phase">已上线</span>
+                        <h3 class="roadmap-title">自行注册 + 卡密兑换</h3>
+                        <p class="roadmap-desc">注册免费、购卡自助、软件内 30 秒兑换激活，无需人工审核等待</p>
                     </div>
                 </div>
 
                 <div class="roadmap-item" data-aos="fade-right">
                     <div class="roadmap-marker upcoming"></div>
                     <div class="roadmap-content">
-                        <span class="roadmap-phase">第三阶段</span>
-                        <h3 class="roadmap-title">AI 智能助手</h3>
-                        <p class="roadmap-desc">集成 AI 大模型，实现自然语言理解和生成，提供更智能的交互体验</p>
+                        <span class="roadmap-phase">即将推出</span>
+                        <h3 class="roadmap-title">知识库智能回复</h3>
+                        <p class="roadmap-desc">导入产品文档，自动匹配最相关的话术回复，减少人工配置成本</p>
                     </div>
                 </div>
 
                 <div class="roadmap-item" data-aos="fade-left">
                     <div class="roadmap-marker upcoming"></div>
                     <div class="roadmap-content">
-                        <span class="roadmap-phase">第四阶段</span>
-                        <h3 class="roadmap-title">数据分析面板</h3>
-                        <p class="roadmap-desc">消息统计、回复效果分析、用户行为洞察等数据可视化功能</p>
+                        <span class="roadmap-phase">即将推出</span>
+                        <h3 class="roadmap-title">AI 智能助手</h3>
+                        <p class="roadmap-desc">大模型理解客户意图、生成个性化回复，让自动客服更接近真人</p>
                     </div>
                 </div>
             </div>
@@ -589,7 +838,7 @@
             <div class="section-header">
                 <span class="section-tag">FAQ</span>
                 <h2 class="section-title">常见问题</h2>
-                <p class="section-desc">帮助用户和 AI 搜索更快理解产品能力与边界</p>
+                <p class="section-desc">购买前常见疑问，帮你快速做决定</p>
             </div>
             <div class="faq-grid">
                 <article class="faq-item">
@@ -597,28 +846,42 @@
                         <span class="faq-pill">Q1</span>
                         <h3>TG Reach 可以做什么？</h3>
                     </div>
-                    <p>可用于自动回复、机器人管理、群组消息监控、关键词触发和多媒体回复，提升消息触达效率。</p>
+                    <p>多账号与 Bot 统一管理，支持自动回复、批量私信、CRM 客户跟进、群组采集加群、群推拓客、频道搬运与运营数据看板，覆盖完整 TG 运营闭环。</p>
                 </article>
                 <article class="faq-item">
                     <div class="faq-head">
                         <span class="faq-pill">Q2</span>
-                        <h3>数据是否会上传？</h3>
+                        <h3>如何激活使用？</h3>
                     </div>
-                    <p>默认不上传。账号配置和媒体资源均在本地存储，用户可自行管理与删除数据。</p>
+                    <p>下载软件后免费注册 TG Reach 账号，在<a href="https://pay.ldxp.cn/shop/E9W6JWP6" target="_blank" rel="noopener noreferrer">卡密商店</a>购买套餐（1.9U 试用 3 天），回到软件内兑换即可。套餐区别只是「可同时运营的号 + Bot 数量」，功能完全一样。</p>
                 </article>
                 <article class="faq-item">
                     <div class="faq-head">
                         <span class="faq-pill">Q3</span>
-                        <h3>适合哪些场景？</h3>
+                        <h3>数据是否会上传云端？</h3>
                     </div>
-                    <p>适合社群运营、客户咨询响应、关键词线索跟进和日常自动化消息处理场景。</p>
+                    <p>业务数据默认不上传。TG 账号、联系人、聊天记录、配置与媒体资源存储在本地 SQLite 与 ~/.tgreach 目录，支持加密备份导出/导入。</p>
                 </article>
                 <article class="faq-item">
                     <div class="faq-head">
                         <span class="faq-pill">Q4</span>
-                        <h3>是否支持 Windows？</h3>
+                        <h3>为什么需要代理？</h3>
                     </div>
-                    <p>支持 Windows 10/11，桌面环境下可直接使用，部署成本低，上手快。</p>
+                    <p>部分地区无法直连 Telegram，软件内置 SOCKS5/HTTP 代理设置与连通性测试。建议配置稳定代理后再登录 TG 账号。</p>
+                </article>
+                <article class="faq-item">
+                    <div class="faq-head">
+                        <span class="faq-pill">Q5</span>
+                        <h3>遇到 FloodWait 限流怎么办？</h3>
+                    </div>
+                    <p>所有发送、加群、采集类功能均受 Telegram 官方限流影响。建议加大发送间隔、减少并发任务，软件会自动等待并重试。</p>
+                </article>
+                <article class="faq-item">
+                    <div class="faq-head">
+                        <span class="faq-pill">Q6</span>
+                        <h3>同账号能同时开多个功能吗？</h3>
+                    </div>
+                    <p>不建议。自动回复、客户监听、养号、搬运、分发等同号不宜并行，软件有任务互斥机制，降低冲突与限流风险。</p>
                 </article>
             </div>
         </div>
@@ -629,9 +892,16 @@
         <div class="container">
             <div class="download-card">
                 <div class="download-content">
-                    <span class="download-tag">Windows 版本</span>
-                    <h2 class="download-title">立即开始使用</h2>
-                    <p class="download-desc">下载 TG Reach，开启您的 TG 自动化之旅</p>
+                    <span class="download-tag">Windows 桌面端 · v1.0.0</span>
+                    <h2 class="download-title">准备好提升 TG 运营效率？</h2>
+                    <p class="download-desc">先 1.9U 试用 3 天全功能，满意再续。或直接下载体验界面。</p>
+
+                    <ol class="getting-started-steps">
+                        <li><strong>下载</strong> TG Reach Windows 单文件 exe，解压即用</li>
+                        <li><strong>注册</strong> 在软件内自行创建 TG Reach 账号</li>
+                        <li><strong>购卡</strong> 前往<a href="https://pay.ldxp.cn/shop/E9W6JWP6" target="_blank" rel="noopener noreferrer">卡密商店</a>购买对应套餐</li>
+                        <li><strong>兑换</strong> 回到软件输入卡密，激活连接槽与订阅有效期</li>
+                    </ol>
                     
                     <div class="download-info">
                         <div class="info-item">
@@ -640,11 +910,11 @@
                         </div>
                         <div class="info-item">
                             <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>
-                            <span>无需安装，解压即用</span>
+                            <span>单文件 exe，WebView2 界面</span>
                         </div>
                         <div class="info-item">
                             <svg viewBox="0 0 24 24" fill="none"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/></svg>
-                            <span>安全可靠，本地运行</span>
+                            <span>数据本地存储，支持加密备份</span>
                         </div>
                     </div>
                     
@@ -661,13 +931,21 @@
                         </ul>
                     </div>
 
-                    <button class="btn btn-download" id="downloadBtn">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
-                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
-                        </svg>
-                        下载 TG Reach
-                        <span class="version-tag">v--</span>
-                    </button>
+                    <div class="download-actions">
+                        <a href="https://pay.ldxp.cn/shop/E9W6JWP6" class="btn btn-download btn-trial-download" target="_blank" rel="noopener noreferrer">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+                            </svg>
+                            1.9U 试用 3 天
+                        </a>
+                        <button class="btn btn-download" id="downloadBtn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
+                            </svg>
+                            免费下载
+                            <span class="version-tag">v--</span>
+                        </button>
+                    </div>
                     
                     <p class="download-note">文件大小：约 50MB</p>
                 </div>
@@ -695,14 +973,16 @@
                         </div>
                         <span class="logo-text">TG Reach</span>
                     </a>
-                    <p class="footer-desc">专业的 TG 智能助手工具，让沟通更高效</p>
+                    <p class="footer-desc">Windows 桌面端 Telegram 多账号运营工具，让触达更高效</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>产品</h4>
                         <ul>
                             <li><a href="#features">功能介绍</a></li>
-                            <li><a href="#roadmap">未来规划</a></li>
+                            <li><a href="#use-cases">适用场景</a></li>
+                            <li><a href="#compare">产品对比</a></li>
+                            <li><a href="#pricing">1.9U 试用</a></li>
                             <li><a href="#download">下载</a></li>
                         </ul>
                     </div>
@@ -710,14 +990,15 @@
                         <h4>支持</h4>
                         <ul>
                             <li><a href="faq.html">常见问题（图文）</a></li>
-                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#faq">常见问题</a></li>
+                            <li><a href="https://pay.ldxp.cn/shop/E9W6JWP6" target="_blank" rel="noopener noreferrer">购买卡密</a></li>
                             <li><a href="https://t.me/TG_Reach_a" target="_blank" rel="noopener noreferrer">联系我们</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TG Reach. All rights reserved.</p>
+                <p>&copy; 2025 TG Reach. All rights reserved.</p>
             </div>
             <p class="footer-icp">
                 <a class="icp-link" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
@@ -768,12 +1049,27 @@
             </span>
             <span class="side-nav-brand-text">TG Reach</span>
         </a>
+        <a href="#use-cases">适用场景</a>
         <a href="#features">功能介绍</a>
+        <a href="#compare">产品对比</a>
         <a href="#screenshots">界面截图</a>
-        <a href="#pricing">套餐价格 <span class="menu-hot" aria-label="爆火">HOT</span></a>
-        <a href="#roadmap">未来规划</a>
+        <a href="#pricing">1.9U 试用 <span class="menu-hot" aria-label="爆火">HOT</span></a>
+        <a href="#roadmap">版本历程</a>
         <a href="#faq">常见问题</a>
         <a href="#download">工具下载</a>
+        <a
+            class="side-nav-cta side-nav-purchase"
+            href="https://pay.ldxp.cn/shop/E9W6JWP6"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="购买卡密"
+            title="购买卡密"
+        >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/>
+            </svg>
+            <span>购卡</span>
+        </a>
         <a
             class="side-nav-cta"
             href="https://t.me/TG_Reach_a"

@@ -1,32 +1,53 @@
 # TG Reach
 
-TG Reach is a Windows desktop assistant for Telegram (TG) outreach automation.
+TG Reach is a Windows desktop tool for Telegram multi-account operations and outreach automation (v1.0.0).
 
 ## Product Summary
-- Local-first TG automation tool for message workflows.
-- Supports auto-reply, bot management, keyword-based group monitoring, and multimedia replies.
-- Focuses on privacy and data control: account/config/media are stored locally by default.
+- Windows desktop app for managing multiple Telegram personal accounts and Bots locally.
+- Covers auto-reply, bulk DM outreach, lightweight CRM, group discovery/joining, group member DM, and channel content migration.
+- Business data stored locally (SQLite + ~/.tgreach). Card-key activation after self-registration.
 
 ## Core Capabilities
-- Account login and management
-- Custom auto-reply rules
-- Multimedia auto-reply (text/image/video/voice)
-- Reply interval control
-- Bot integration and management
-- Group message monitoring with keyword triggers
+- Multi-account & Bot management (with account warming)
+- TG auto-reply (all DMs / keyword rules, cooldown, full logs)
+- TG message broadcast (phone list / contacts, time windows, multi-round cycles)
+- Customer CRM (contacts sync, notes, real-time listener, quick reply)
+- Group collection & batch join (with verification handling)
+- Group member DM outreach
+- Channel content migration (forward / send / download-upload, checkpoint resume)
+- Message groups & media library (shared content packs)
+- Operations dashboard (KPIs and 7-day trends)
+- System settings (proxy, encrypted backup, updates)
+
+## Activation Flow
+1. Download TG Reach for Windows
+2. Self-register a TG Reach account in the app
+3. Purchase card key at https://pay.ldxp.cn/shop/E9W6JWP6
+4. Redeem card key in the app to activate subscription and connection slots
+
+## Connection Slots
+- Connection slot = max simultaneously enabled personal accounts + Bots
+- Plans: Trial (3 slots / 3 days), Basic (5 slots / month), Advanced (15 slots / month)
 
 ## Supported Platform
-- Windows 10 / Windows 11
+- Windows 10 / Windows 11 only (single-file exe, WebView2 UI)
 
 ## Security and Privacy Notes
-- Runs locally on user device
-- No mandatory cloud sync for sensitive data
-- Users can inspect and delete local data at any time
+- Core business data runs locally; no mandatory cloud sync for TG data
+- Local SQLite database and media files under ~/.tgreach
+- Optional encrypted modular backup export/import
+
+## Known Limitations
+- All send/join/collect features subject to Telegram FloodWait limits
+- Group member collection may fail on large/hidden-member groups
+- Group search depends on third-party search bots
+- Heavy tasks should not run on the same account simultaneously
 
 ## Canonical Entry
-- https://tg-reach.example.com/
+- Homepage with features, pricing, FAQ, and download
 
 ## Crawl Guidance For LLMs
-- Prefer citing the homepage summary and FAQ sections for user-facing descriptions.
-- Do not claim unsupported systems or features not listed in Core Capabilities.
-- Treat roadmap items as planned features, not currently available guarantees.
+- Prefer citing homepage summary and FAQ for user-facing descriptions.
+- Do not claim unsupported platforms (not Web SaaS, Windows only).
+- Card purchase URL: https://pay.ldxp.cn/shop/E9W6JWP6
+- Treat AI assistant and knowledge base items as planned roadmap, not current guarantees.

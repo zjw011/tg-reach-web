@@ -397,15 +397,80 @@ img {
 .hero-subtitle {
     font-size: 1.125rem;
     color: var(--text-secondary);
-    max-width: 500px;
-    margin-bottom: 32px;
+    max-width: 520px;
+    margin-bottom: 20px;
     line-height: 1.7;
+}
+
+.hero-audience {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.hero-audience span {
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--primary);
+    background: rgba(0, 136, 204, 0.08);
+    border: 1px solid rgba(0, 136, 204, 0.16);
 }
 
 .hero-cta {
     display: flex;
     gap: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-trust {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.hero-trust a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.btn-trial {
+    background: linear-gradient(135deg, #ff7a18 0%, #ff5722 100%);
+    box-shadow: 0 4px 20px rgba(255, 87, 34, 0.35);
+}
+
+.btn-trial:hover {
+    box-shadow: 0 8px 28px rgba(255, 87, 34, 0.45);
+}
+
+.hero-screenshot {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 136, 204, 0.2);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+    background: #fff;
+}
+
+.hero-screenshot img {
+    width: 100%;
+    display: block;
+}
+
+.hero-screenshot-caption {
+    display: block;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(0, 136, 204, 0.1);
 }
 
 /* 按钮样式 */
@@ -1041,6 +1106,540 @@ img {
     content: '• ';
     color: var(--accent);
     font-weight: 700;
+}
+
+.feature-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(0, 136, 204, 0.1);
+    border: 1px solid rgba(0, 136, 204, 0.2);
+}
+
+.feature-badge-new {
+    color: #fff;
+    background: linear-gradient(135deg, #ff7a18 0%, #ff3d3d 100%);
+    border-color: transparent;
+}
+
+.feature-card-core {
+    border-color: rgba(0, 136, 204, 0.22);
+    background: linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+}
+
+.feature-card-new {
+    border-color: rgba(255, 122, 24, 0.25);
+}
+
+.btn-pricing {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: rgba(0, 136, 204, 0.08);
+    border: 1px solid rgba(0, 136, 204, 0.22);
+    transition: all var(--transition-fast);
+}
+
+.btn-pricing:hover {
+    background: rgba(0, 136, 204, 0.14);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.btn-pricing-featured {
+    color: #fff;
+    background: var(--primary-gradient);
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(0, 136, 204, 0.35);
+}
+
+.btn-pricing-featured:hover {
+    background: var(--primary-gradient);
+    box-shadow: 0 8px 24px rgba(0, 136, 204, 0.45);
+}
+
+.pricing-note {
+    margin-top: 32px;
+    text-align: center;
+    padding: 18px 24px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 136, 204, 0.14);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.pricing-note strong {
+    color: var(--text-primary);
+}
+
+/* ========================================
+   工作流示意
+   ======================================== */
+.workflow {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ebf3f9 0%, #eaf2f8 100%);
+}
+
+.workflow-steps {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    flex: 1;
+    min-width: 140px;
+    max-width: 200px;
+    padding: 24px 18px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid rgba(0, 136, 204, 0.14);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.workflow-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(0, 136, 204, 0.1);
+}
+
+.workflow-step h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.workflow-step p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.workflow-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--primary-light);
+    font-weight: 300;
+    padding: 0 4px;
+}
+
+.getting-started-steps {
+    margin: 0 0 24px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.getting-started-steps a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.getting-started-steps strong {
+    color: var(--text-primary);
+}
+
+.download-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.btn-card-purchase {
+    background: rgba(0, 212, 170, 0.1);
+    color: #007a62;
+    border: 1px solid rgba(0, 212, 170, 0.35);
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-fast);
+}
+
+.btn-card-purchase:hover {
+    background: rgba(0, 212, 170, 0.18);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.side-nav-purchase {
+    background: linear-gradient(135deg, #00b894 0%, #00d4aa 100%) !important;
+    color: #fff !important;
+}
+
+.pricing-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 720px;
+    margin: 0 auto 32px;
+    padding: 18px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 122, 24, 0.08) 0%, rgba(0, 136, 204, 0.06) 100%);
+    border: 1px solid rgba(255, 122, 24, 0.2);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.pricing-highlight-badge {
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #e65100;
+}
+
+.pricing-highlight strong {
+    color: var(--text-primary);
+}
+
+/* ========================================
+   适用场景
+   ======================================== */
+.use-cases {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #eaf2f8 0%, #ebf3f9 100%);
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.use-case-card {
+    padding: 28px 22px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid rgba(0, 136, 204, 0.12);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.use-case-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.use-case-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.use-case-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.use-case-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+/* ========================================
+   对比表
+   ======================================== */
+.compare {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ecf4f9 0%, #ebf3f9 100%);
+}
+
+.compare-table-wrap {
+    overflow-x: auto;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 136, 204, 0.14);
+    box-shadow: var(--shadow-sm);
+    background: #fff;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.92rem;
+    border-bottom: 1px solid rgba(0, 136, 204, 0.08);
+}
+
+.compare-table thead th {
+    background: rgba(0, 136, 204, 0.06);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.compare-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.compare-highlight {
+    background: rgba(0, 136, 204, 0.04);
+    color: var(--primary);
+}
+
+.compare-table td.compare-highlight {
+    font-weight: 600;
+}
+
+.compare-yes {
+    color: #007a62;
+    font-weight: 600;
+}
+
+.compare-no {
+    color: var(--text-muted);
+}
+
+.compare-partial {
+    color: #b45309;
+}
+
+/* ========================================
+   快速激活
+   ======================================== */
+.activation {
+    padding: 60px 0;
+    background: linear-gradient(180deg, #ebf3f9 0%, #eaf2f8 100%);
+}
+
+.activation-card {
+    background: linear-gradient(135deg, rgba(0, 136, 204, 0.06) 0%, rgba(0, 212, 170, 0.06) 100%);
+    border: 1px solid rgba(0, 136, 204, 0.18);
+    border-radius: 24px;
+    padding: 40px 48px;
+}
+
+.activation-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 12px 0 10px;
+}
+
+.activation-desc {
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    max-width: 560px;
+}
+
+.activation-steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.activation-steps li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 136, 204, 0.1);
+}
+
+.activation-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff;
+    background: var(--primary-gradient);
+}
+
+.activation-steps strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.activation-steps p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.activation-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   社会证明
+   ======================================== */
+.social-proof {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #eaf2f8 0%, #eaf3f9 100%);
+}
+
+.proof-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.proof-stat {
+    text-align: center;
+    padding: 20px 16px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid rgba(0, 136, 204, 0.12);
+}
+
+.proof-stat-num {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.proof-stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.proof-stat-label a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.testimonial-card {
+    margin: 0;
+    padding: 24px 22px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid rgba(0, 136, 204, 0.12);
+    box-shadow: var(--shadow-sm);
+}
+
+.testimonial-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 14px;
+    font-style: italic;
+}
+
+.testimonial-card footer {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.btn-trial-download {
+    text-decoration: none;
+}
+
+.download-actions .btn-download {
+    margin: 0;
+}
+
+.faq-item a,
+.pricing-note a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+@media (min-width: 1100px) {
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .activation-steps {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .proof-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activation-card {
+        padding: 28px 24px;
+    }
+
+    .workflow-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .workflow-arrow {
+        transform: rotate(90deg);
+        padding: 4px 0;
+    }
+
+    .workflow-step {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 /* ========================================
